@@ -31,8 +31,8 @@ function AnnounceList() {
                                     <span>ㅣ</span>
                                 <span className="viewer text">
                                     <img src="/img/preview-open.svg" alt="viewer" />
-                                    {list.viewer >= 999 ?
-                                        ("999+") :
+                                    {list.viewer >= 99 ?
+                                        ("99+") :
                                         ( <span className="text">  {list.viewer} </span> )
                                     }
                                 </span>
@@ -40,7 +40,7 @@ function AnnounceList() {
                                 <span className="likes text">
                                     <img src="/img/like.svg" alt="likes" />
                                     {list.likes >= 99 ?
-                                        ("99    +") :
+                                        ("99+") :
                                         ( <span className="text">  {list.likes} </span> )
                                     }
                                 </span>
