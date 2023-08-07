@@ -1,0 +1,91 @@
+@charset "utf-8";
+
+.footer {
+    margin-top: 100px;
+    border-top: 1px solid #ECECEC;;
+}
+
+.footer .content {
+    width: 1440px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-top: 25px;
+}
+
+.footer .content ul {
+    color: #444;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 12px;
+    margin-bottom: 35px;
+}
+.footer .content li {
+    display: inline-flex;
+    white-space: pre;
+}
+
+.footer .content li:last-child {
+    margin-left: 20px;
+}
+
+.content > span {
+    color: #222;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 300;   
+    line-height: 16px;
+}
+
+.ft_p {
+    margin:11px 0 15px 0;
+}
+.ft_p .ft_f {
+    display: flex;
+    align-items: center;
+}
+.ft_p .ft_s {
+    display: flex;
+    align-items: center;
+}
+.ft_p p {
+    color: #444;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px;
+}
+.ft_p p span {
+    color: #444;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 16px;
+}
+
+.ft_p span {
+    color: #d1d1d1;
+    font-family: Pretendard;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 16px;
+}
+
+.content > p {
+    color: #b6b6b6;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 15px;
+}
+
+.footer .line {
+    margin:0 auto;
+    width: 100vm;
+    height: 1px;
+    background: #ECECEC;
+    margin-bottom: 25px;
+}
+
+
