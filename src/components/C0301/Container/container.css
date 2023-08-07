@@ -1,0 +1,66 @@
+input:focus {
+    outline: none;
+}
+.an_mt {
+    width: 1440px;
+    margin: auto;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.an_mt .al_t {
+    color: #666;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    margin-bottom: 10px;
+}
+.an_mt .an_t {
+    color: #333;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+    margin-bottom:30px;
+}
+
+.an_mt .sc_b {
+    display: inline-flex;
+    width: 410px;
+    margin: 0 auto;
+    padding: 12px 24px;
+    border-radius: 100px;
+    border: 1px solid #838383;;
+    margin-bottom: 50px;
+}
+
+.an_mt .sc_b input {
+    width: 388px;
+    border: 0;
+    color: #000000;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.an_mt .sc_b input::placeholder {
+    border: 0;
+    color: #989898;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+
+.an_mt .sc_b img{
+    cursor: pointer;
+}
+
+.an_mt .notisList {
+    border-top: 1px solid #333333;
+    margin-bottom: 40px;
+}
+
