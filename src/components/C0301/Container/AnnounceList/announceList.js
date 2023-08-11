@@ -1,54 +1,64 @@
 import React from "react";
-import { notisInfo } from "./ListInfo/listInfo";
 import "./announceList.css";
 
-function AnnounceList() {
+function AnnounceList(props) {
+
+    const { DateTime } = require("luxon");
+
+    const formatNum = (num) => {
+        return new Intl.NumberFormat('en-US', {
+            notation: 'compact',
+            maximumFractionDigits: 1,
+        }).format(num)
+    }
+
+    const remain = props.totalCnt%props.limit;
+
+    
+
     return (
     <div>
-        {notisInfo.map((list) => (
-            <div className="list" key={list.id}>
-                <span className="id">{list.id}</span>
+        {props.data.map((item) => 
+            <div className="list" key={item.id}>
+                <span className="id">{item.id}</span>
                     <div className="detail">
                         <div className="content">
-                            <p className="title">{list.title}</p>
-                                {list.attach == true ? (
+                            <span className="category">[{item.category}]</span>
+                            <p className="title">{item.title}</p>
+                                {item.file ? (
                                     <img src="/img/copy-one.svg" alt="attach" /> 
-                                ) : null} 
-                                {list.comments !==  0 ? (
-                                    list.comments >= 99 ? ( 
-                                    <span className="comment">[99+]</span> ) :
-                                    <span className="comment">[{list.comments}]</span>
-                                ) : null}
+                                ) : null}  
+                                    <span className="comment">
+                                        [{item.commentCnt !==0 ? item.commentCnt >= 99 ? ("99+" ): ([item.commentCnt]) : null}]
+                                    </span>
                         </div>
                             <div className="infos">
                                 <span className="writer text">
-                                    {list.writer}
+                                    {item.writer.name}
                                 </span>
                                     <span>ㅣ</span>
                                 <span className="date text">
-                                    {list.date} 
+                                    {DateTime.fromMillis(item.createdAt).toFormat("yyyy.MM.dd")}
                                 </span>
                                     <span>ㅣ</span>
                                 <span className="viewer text">
                                     <img src="/img/preview-open.svg" alt="viewer" />
-                                    {list.viewer >= 99 ?
-                                        ("99+") :
-                                        ( <span className="text">  {list.viewer} </span> )
-                                    }
+                                        <span className="text"> 
+                                            {formatNum(item.viewCnt)}
+                                        </span>
                                 </span>
                                     <span>ㅣ</span>
                                 <span className="likes text">
                                     <img src="/img/like.svg" alt="likes" />
-                                    {list.likes >= 99 ?
-                                        ("99+") :
-                                        ( <span className="text">  {list.likes} </span> )
-                                    }
+                                        <span className="text">
+                                            {formatNum(item.likeCnt)}
+                                        </span>
                                 </span>
                             </div>
                     </div>
             </div>
         )
-    )}
+    }
 </div>
     )
 }
