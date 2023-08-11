@@ -1,34 +1,63 @@
 import React, { useState } from "react";
 import './pageMove.css';
+import Pagination from "react-js-pagination";
 
-function PageMove() {
-    const pages = [1,2,3,4,5];
+function PageMove(props) {
 
-    const [btnActive, setBtnActive] = useState("");
+    const pages = [];
+    const numPages = Math.ceil(props.totalCnt/10);
+    const [btnActive, setBtnActive] = useState(1);
+    console.log(props.totalCnt);
 
-    const toggleActive = (e) => {
-        setBtnActive((prev) => {
-            return e.target.value;
-        });
+    for(var i=1; i<=numPages; i++) {
+        pages.push(i);
+    }
+
+    const toggleActive = (page) => {
+        props.onPageClick(page);
+        setBtnActive(page);
+        console.log(page);
     };
 
+    const onLastPage = (e) => {
+        setBtnActive(numPages);
+        props.onPageClick(btnActive);
+    }
+    const onNextPage = (e) => {
+        setBtnActive((num) => {
+            console.log(num);
+            if( numPages > num) {
+                return btnActive - 1;
+            }
+            return num;
+        });
+        props.onPageClick(btnActive);
+    }
+
+    const onPrevPage = (e) => {
+        setBtnActive((num) => {
+            if (1 < num) {
+                return btnActive+1;
+            }
+            return num;
+        });
+        props.onPageClick(btnActive);
+    }
+
+    
     return (
                 <div className="page">
-                    <img src="/img/left.svg" alt="lArrow"/>
-                    {pages.map((item,id) =>
-                    <div className="pageNum">
-                        <button 
-                            value={id}
-                            className={ "btn" + (id == btnActive ? " active" : "")}
-                            onClick={toggleActive}
-                            >
-                                {item}
-                        </button>
-                    </div> )}
-                    <img src="/img/right.svg" alt="rArrow"/>
-                    <img src="/img/rights.svg" alt= "rArrows"/>     
+                    <Pagination
+                        activePage={btnActive}
+                        itemsCountPerPage={props.limit}
+                        totalItemsCount={props.totalCnt}
+                        pageRangeDisplayed={5}
+                        prevPageText={"<"}
+                        nextPageText={">"}
+                        onChange={toggleActive}
+                    />
                 </div>
     )
 }
 
-export default PageMove;
+export default PageMove;    
