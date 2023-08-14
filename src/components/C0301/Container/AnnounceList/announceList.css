@@ -1,0 +1,121 @@
+.list { 
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px solid #D8DDE5;
+}
+
+.list .id {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-basis: 46px;
+    color: #888;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+    padding-left: 34px;
+}
+
+.list .detail {
+    display: flex;  
+    flex-direction: column;
+    gap: 22px;
+    padding: 32px 0 32px 0 ;
+    margin-left: 40px;
+}
+
+.list .content {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    max-width: 1280px;
+}
+
+.list .content .category {
+    color: #333;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 100% */
+}
+
+.list .content .title {
+    color: #333;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.content img {
+    padding-left:10px;
+}
+
+.content .comment {
+    color: #193DD0;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+    padding-left: 10px;
+}
+
+.list .infos { 
+    display: inline-flex; 
+    align-items: center;
+}
+
+.list .infos .text {
+    display: flex;
+    align-items: center;
+    color: #666;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.infos .writer {
+    flex-basis: 44px;
+    overflow: hidden;
+}
+
+.infos .date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-basis: 92px;
+}
+
+.infos .viewer {
+    justify-content: center;
+    align-items: center;
+    flex-basis: 57px;
+    overflow: hidden;
+}
+
+.infos .likes {
+    justify-content: center;
+    align-items: center;
+    flex-basis: 50px;
+    overflow: hidden;
+}
+
+.infos img {
+    padding-right: 4px;
+    padding-bottom: 2px;
+}
+
+.infos span{
+    color: #D8DDE5;;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px;
+    padding-top: 1px;
+}
