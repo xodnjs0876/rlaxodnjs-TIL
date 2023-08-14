@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import AnnounceList from "./AnnounceList/announceList";
 import './container.css';
 import PageMove from "./PageMove/pageMove";
-import { useGetNotices } from "./API/api";
+import { useGetNotices } from "../../API/api";
 
 function Container(props) {
     const {loading, data, error, query} = useGetNotices();
