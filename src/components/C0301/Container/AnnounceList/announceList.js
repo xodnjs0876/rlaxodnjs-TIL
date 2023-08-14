@@ -1,9 +1,10 @@
 import React from "react";
 import "./announceList.css";
+import {DateTime} from "luxon"
 
 function AnnounceList(props) {
 
-    const { DateTime } = require("luxon");
+    // const { DateTime } = require("luxon");
 
     const formatNum = (num) => {
         return new Intl.NumberFormat('en-US', {
